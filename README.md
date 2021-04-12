@@ -3,7 +3,7 @@
 #### 2. Install k3d
 #### 3. Create a k3s cluster using k3d
 
-sudo privileges are required because the ingress controller runs on port 80, and the ingress controller is accessible from your host ip. 
+sudo privileges are required because the ingress controller runs on port 80.
 
 ```
 $ k3d cluster create --network host
@@ -50,8 +50,8 @@ NAME    CLASS    HOSTS                                        ADDRESS         PO
 nginx   <none>   nginx.wuhanstudio.uk,whoami.wuhanstudio.uk   172.31.53.219   80      5m3s
 ```
   
-Different domains should serve different web apps.
-  
+Different domains should serve different web apps, and of course, they are accessible from the public ip address.
+
 ```
 curl --header "Host: nginx.wuhanstudio.uk"  172.31.53.219
 curl --header "Host: whoami.wuhanstudio.uk"  172.31.53.219
