@@ -7,17 +7,20 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    ingress.kubernetes.io/ssl-redirect: "true"
     # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    # nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   tls:
     - secretName: nginx-tls
       hosts:
-        - nginx.example.com
+        - nginx.wuhanstudio.uk
     - secretName: whoami-tls
       hosts:
-        - whoami.example.com
+        - whoami.wuhanstudio.uk
   rules:
-    - host: nginx.example.com
+    - host: nginx.wuhanstudio.uk
       http:
         paths:
           - path: /
@@ -27,7 +30,7 @@ spec:
                 name: k3d-demo
                 port: 
                   number: 80
-    - host: whoami.example.com
+    - host: whoami.wuhanstudio.uk
       http:
         paths:
           - path: /

@@ -67,3 +67,10 @@ Different domains should serve different web apps, and of course, they are acces
 curl --header "Host: nginx.wuhanstudio.uk"  172.31.53.219
 curl --header "Host: whoami.wuhanstudio.uk"  172.31.53.219
 ```
+
+Finally, you may delete the cluster:
+
+```
+$ k3d cluster delete
+```
+
