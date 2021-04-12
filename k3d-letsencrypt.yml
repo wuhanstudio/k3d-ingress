@@ -4,7 +4,7 @@ metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    email: wuhanstudio@qq.com # replace this
+    email: your@email.com # replace this
     privateKeySecretRef:
       name: prod-issuer-account-key
     server: https://acme-v02.api.letsencrypt.org/directory

@@ -15,12 +15,12 @@ spec:
   tls:
     - secretName: nginx-tls
       hosts:
-        - nginx.wuhanstudio.uk
+        - nginx.example.com
     - secretName: whoami-tls
       hosts:
-        - whoami.wuhanstudio.uk
+        - whoami.example.com
   rules:
-    - host: nginx.wuhanstudio.uk
+    - host: nginx.example.com
       http:
         paths:
           - path: /
@@ -30,7 +30,7 @@ spec:
                 name: k3d-demo
                 port: 
                   number: 80
-    - host: whoami.wuhanstudio.uk
+    - host: whoami.example.com
       http:
         paths:
           - path: /
