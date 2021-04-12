@@ -3,7 +3,7 @@
 #### 2. Install k3d
 #### 3. Create a k3s cluster using k3d
 
-sudo privileges are required because the ingress controller runs on port 80.
+sudo privileges are required because the ingress controller runs on port 80, and the ingress controller is accessible from your host ip. 
 
 ```
 $ k3d cluster create --network host
