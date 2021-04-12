@@ -9,6 +9,14 @@ sudo privileges are required because the ingress controller runs on port 80.
 $ k3d cluster create --network host
 ```
 
+#### 4. Create cert-manager
+
+```
+$ kubectl create namespace cert-manager
+$ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v0.11.0/cert-manager.yaml
+$ kubectl get pods --namespace cert-manager
+```
+
 #### 4. Apply Configurations
 
 
@@ -17,6 +25,9 @@ $ kubectl create namespace k3d-demo
 
 # Replace example.com with your domain
 $ find . -type f -name "*.yml" -exec sed -i'' -e 's/example.com/wuhanstudio.uk/g' {} +
+
+# Replace your@email.com with your email
+find . -type f -name "*.yml" -exec sed -i'' -e 's/your@email.com/wuhanstudio@qq.com/g' {} +
 
 $ kubectl apply -f .
 ```
