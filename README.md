@@ -19,7 +19,6 @@ $ kubectl create namespace k3d-demo
 $ find . -type f -name "*.yml" -exec sed -i'' -e 's/example.com/wuhanstudio.uk/g' {} +
 
 $ kubectl apply -f .
-$ kubectl get all -n k3d-demo
 ```
 
 You should see eveything working.
