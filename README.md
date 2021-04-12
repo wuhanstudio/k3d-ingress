@@ -57,8 +57,8 @@ Now, we can test the ingress controller.
   
 ```
 $ kubectl get ingress -n k3d-demo
-NAME    CLASS    HOSTS                                        ADDRESS         PORTS   AGE
-nginx   <none>   nginx.wuhanstudio.uk,whoami.wuhanstudio.uk   172.31.53.219   80      5m3s
+NAME    CLASS    HOSTS                                        ADDRESS         PORTS     AGE
+nginx   <none>   nginx.wuhanstudio.uk,whoami.wuhanstudio.uk   172.31.53.219   80, 443   100s
 ```
   
 Different domains should serve different web apps, and of course, they are accessible from the public ip address.
