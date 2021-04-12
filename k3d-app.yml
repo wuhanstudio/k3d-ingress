@@ -1,0 +1,57 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k3d-demo-deployment
+  namespace: k3d-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k3d-demo
+  template:
+    metadata:
+      labels:
+        app: k3d-demo
+    spec:
+      containers:
+      - name: k3d-demo
+        image: nginx:alpine
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "10m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k3d-whoami-deployment
+  namespace: k3d-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k3d-whoami
+  template:
+    metadata:
+      labels:
+        app: k3d-whoami
+    spec:
+      containers:
+      - name: k3d-whoami
+        image: containous/whoami
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "10m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
